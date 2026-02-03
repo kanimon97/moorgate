@@ -1,8 +1,7 @@
 import { VoiceOption } from './types';
 
-// Using a public Vapi Public Key for demo purposes. 
-// In production, this should be an env variable.
-export const VAPI_PUBLIC_KEY = '61e2192e-63d5-4029-abde-dc5f4910a291';
+// Vapi Public Key from environment variable
+export const VAPI_PUBLIC_KEY = import.meta.env.VITE_VAPI_PUBLIC_KEY || '61e2192e-63d5-4029-abde-dc5f4910a291';
 
 // ElevenLabs British accent voices
 export const VOICES: VoiceOption[] = [
