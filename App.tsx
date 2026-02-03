@@ -39,8 +39,8 @@ function App() {
         onToggleTheme={toggleTheme}
       />
 
-      <main className="flex-grow flex flex-col items-center justify-center relative -mt-20">
-        <div className="w-full h-[600px] relative z-0 flex items-center justify-center">
+      <main className="flex-grow flex flex-col items-center justify-center relative -mt-12 sm:-mt-20 px-4">
+        <div className="w-full h-[400px] sm:h-[600px] relative z-0 flex items-center justify-center">
           <Orb 
             agentState={agentState} 
             volumeMode="manual" 
@@ -50,7 +50,7 @@ function App() {
         </div>
 
         {/* Status Text */}
-        <div className="absolute top-[75%] text-center text-sm text-gray-400 dark:text-gray-500 font-light tracking-wide h-6 transition-colors duration-300">
+        <div className="absolute top-[70%] sm:top-[75%] text-center text-xs sm:text-sm text-gray-400 dark:text-gray-500 font-light tracking-wide h-6 transition-colors duration-300">
            {callStatus === 'active' && (
              <span className="animate-pulse">
                {conversationState === 'listening' ? 'Listening...' : 
