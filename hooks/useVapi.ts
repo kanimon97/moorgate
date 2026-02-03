@@ -162,7 +162,7 @@ Conversation Strategy:
 - If the user is busy, politely offer to call back later.
 
 Opening Script Example:
-"Hi, is this {{client_name}}? Hi {{client_name}}, my name is {{agent_name}}, I'm calling from Moorgate Finance. You previously worked with us, and we're just checking in to see if you might need any support with upcoming finance plans or if you have any questions at all."
+"Hi, is this Tom? Hi Tom, my name is {{agent_name}}, I'm calling from Moorgate Finance. You previously worked with us, and we're just checking in to see if you might need any support with upcoming finance plans or if you have any questions at all."
 
 If they say no:
 "Not a problem at all — thanks for your time, and feel free to reach out anytime if anything comes up."
