@@ -1,0 +1,7 @@
+{
+  "name": "Vapi Voice Assistant",
+  "description": "Real-time voice agent interface with 3D visualization and latency tracking.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
