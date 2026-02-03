@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
         port: parseInt(env.PORT || '3000'),
         host: '0.0.0.0',
         strictPort: true,
+        allowedHosts: ['.railway.app', 'moorgate-production.up.railway.app'],
       },
       plugins: [react()],
       define: {
