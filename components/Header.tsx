@@ -4,12 +4,11 @@ import { CallStatus } from '../types';
 
 interface HeaderProps {
   status: CallStatus['status'];
-  latency: number;
   isDarkMode: boolean;
   onToggleTheme: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ status, latency, isDarkMode, onToggleTheme }) => {
+export const Header: React.FC<HeaderProps> = ({ status, isDarkMode, onToggleTheme }) => {
   const isOnline = status === 'active';
 
   return (
@@ -21,14 +20,6 @@ export const Header: React.FC<HeaderProps> = ({ status, latency, isDarkMode, onT
       </div>
 
       <div className="flex items-center gap-6">
-        {/* Latency Meter */}
-        {isOnline && (
-          <div className="flex items-center gap-2 text-xs font-mono text-gray-400 dark:text-gray-500 transition-colors">
-            <span className={`w-2 h-2 rounded-full ${latency < 200 ? 'bg-green-400' : 'bg-yellow-400'}`}></span>
-            {latency}ms
-          </div>
-        )}
-
         {/* Status Badge */}
         <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
           isOnline 

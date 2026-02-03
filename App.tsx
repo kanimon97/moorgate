@@ -6,7 +6,7 @@ import { useVapi } from './hooks/useVapi';
 import { DEFAULT_VOICE_ID } from './constants';
 
 function App() {
-  const { volumeLevel, callStatus, conversationState, latency, toggleCall } = useVapi();
+  const { volumeLevel, callStatus, conversationState, toggleCall } = useVapi();
   const [selectedVoice, setSelectedVoice] = useState(DEFAULT_VOICE_ID);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -35,7 +35,6 @@ function App() {
       
       <Header 
         status={callStatus} 
-        latency={latency} 
         isDarkMode={isDarkMode}
         onToggleTheme={toggleTheme}
       />

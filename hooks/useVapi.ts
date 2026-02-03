@@ -8,7 +8,6 @@ export type ConversationState = 'inactive' | 'thinking' | 'listening' | 'talking
 export const useVapi = () => {
   const [volumeLevel, setVolumeLevel] = useState(0);
   const [callStatus, setCallStatus] = useState<CallStatus['status']>('inactive');
-  const [latency, setLatency] = useState(0);
   const [conversationState, setConversationState] = useState<ConversationState>('inactive');
   
   const vapiRef = useRef<any>(null);
@@ -30,7 +29,6 @@ export const useVapi = () => {
       setCallStatus('inactive');
       setConversationState('inactive');
       setVolumeLevel(0);
-      setLatency(0);
     });
 
     vapi.on('speech-start', () => {
@@ -102,17 +100,6 @@ export const useVapi = () => {
       vapi.stop();
     };
   }, []); // Remove dependencies to prevent re-initialization
-
-  // Simulate latency updates during active calls
-  useEffect(() => {
-    let interval: any;
-    if (callStatus === 'active') {
-      interval = setInterval(() => {
-        setLatency(Math.floor(Math.random() * (400 - 150 + 1) + 150));
-      }, 2000);
-    }
-    return () => clearInterval(interval);
-  }, [callStatus]);
 
   const toggleCall = useCallback(async (selectedVoiceId: string) => {
     if (callStatus === 'active' || callStatus === 'loading') {
@@ -220,7 +207,6 @@ Never mention automation.`
     volumeLevel,
     callStatus,
     conversationState,
-    latency,
     toggleCall,
   };
 };
